@@ -1,12 +1,12 @@
 from flask import Flask
 
-app = Flask(__name__)
 
+def create_app(debug=False):
+    app = Flask(__name__)
+    app.debug = debug
 
-@app.route('/')
-def hello():
-    return 'Hello World'
+    @app.route('/')
+    def hello():
+        return 'Hello World'
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    return app
