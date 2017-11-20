@@ -1,9 +1,11 @@
 from flask import Flask
 
+from config import config
 
-def create_app(debug=False):
+
+def create_app(config_name):
     app = Flask(__name__)
-    app.debug = debug
+    app.config.from_object(config[config_name])
 
     @app.route('/')
     def hello():
