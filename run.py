@@ -2,7 +2,7 @@ import os
 
 from website import create_app
 
+app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 
 if __name__ == '__main__':
-    app = create_app(os.getenv('FLASK_CONFIG') or 'default')
     app.run()
