@@ -1,6 +1,8 @@
+from flask import render_template
+
 from . import shop
 
 
 @shop.route('/')
 def hello():
-    return 'Hello World'
+    return render_template('shop/product_list.html')
