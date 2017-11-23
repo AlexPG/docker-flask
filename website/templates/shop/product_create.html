@@ -1,0 +1,23 @@
+{% extends "_layouts/base.html" %}
+
+{% block title %}Products - Create{% endblock %}
+
+{% block shop_content %}
+    <h2>Add new product</h2>
+        <form method="POST" action="{{ url_for('shop.product_create') }}">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                <label>{{ form.name.label }}</label>
+                {{ form.name(placeholder=form.name.description, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                <label>{{ form.description.label }}</label>
+                {{ form.description(placeholder=form.description.description, class_="form-control") }}
+            </div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+{% endblock %}
+
+    
