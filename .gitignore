@@ -3,3 +3,6 @@ venv
 
 # Python 3 bytecode
 __pycache__
+
+# Logs folder
+logs
