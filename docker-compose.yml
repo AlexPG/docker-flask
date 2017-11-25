@@ -1,0 +1,23 @@
+version: '3'
+
+services:  
+  db:
+    image: postgres:9.3
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+    env_file:
+      - ./docker-flask/.env
+
+  web:
+    build: ./docker-flask
+    volumes:
+      - ./docker-flask:/src/
+    env_file:
+      - ./docker-flask/.env
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
